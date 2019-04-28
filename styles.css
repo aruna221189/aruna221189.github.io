@@ -1,0 +1,319 @@
+/* Reset.css */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of reset.css */
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('./static/iconFonts/icomoon.eot?isu3tx');
+    src:  url('./static/iconFonts/icomoon.eot?isu3tx#iefix') format('embedded-opentype'),
+      url('./static/iconFonts/icomoon.ttf?isu3tx') format('truetype'),
+      url('./static/iconFonts/icomoon.woff?isu3tx') format('woff'),
+      url('./static/iconFonts/icomoon.svg?isu3tx#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-close-font:before {
+    content: "\e901";
+  }
+  .icon-menu-font:before {
+    content: "\e900";
+  }  
+  
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa;
+}
+* {
+    box-sizing: border-box;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1 0 auto;
+}
+.sidebar {
+    display: none;
+    width: 100%;
+    max-width: 250px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background: #fff;
+    overflow: auto;
+    z-index: 999;
+    -webkit-transition: transform .33s ease-in,-webkit-transform .33s ease-in;
+    -moz-transition: transform .33s ease-in,-webkit-transform .33s ease-in;
+    -o-transition: transform .33s ease-in,-webkit-transform .33s ease-in;
+    transition: transform .33s ease-in,-webkit-transform .33s ease-in;
+}
+.sidebar.closed {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+}
+.sidebarMenu {
+    float: right;
+    padding: 5px;
+}
+.sidebarList {
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+.sidebarLink {
+    font-size: 16px;
+    padding: 15px;
+    display: block;
+}
+.sidebarLink,
+.sidebarLink:hover,
+.sidebarLink:active,
+.sidebarLink:focus,
+.sidebarLink:visited {
+    text-decoration: none;
+    color: #222;
+}
+.sidebarLink:hover {
+    background: #e9eff2;
+}
+header {
+    display: flex;
+    align-items: center;
+    -webkit-box-shadow: 0 2px 25px 0 rgba(0,0,0,.1);
+    -moz-box-shadow: 0 2px 25px 0 rgba(0,0,0,.1);
+    box-shadow: 0 2px 25px 0 rgba(0,0,0,.1);
+    padding: 0 30px;
+    background: #fff;
+}
+.mobileMenu {
+    font-size: 30px;
+    display: none;
+}
+.mobileMenu,
+.mobileMenu:hover,
+.mobileMenu:active,
+.mobileMenu:focus,
+.mobileMenu:visited {
+    text-decoration: none;
+    color: #222;
+}
+nav {
+    margin-left: 30px;
+}
+.navList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.navList li {
+    display: inline-block;
+}
+.navLink {
+    display: inline-block;
+    padding: 8px 12px;
+}
+.navLink,
+.navLink:hover,
+.navLink:active,
+.navLink:focus,
+.navLink:visited {
+    color: #222;
+    text-decoration: none;
+}
+.navLink:hover {
+    background-color: #f6f8fb;
+}
+footer {
+    padding: 10px 30px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main {
+    margin: 30px 0;
+    padding: 0 30px;
+}
+.copyright {
+    font-size: 12px;
+}
+.footerNavList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.footerNavList li {
+    display: inline-block;
+}
+.footerLink {
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 13px;
+}
+.footerLink,
+.footerLink:hover,
+.footerLink:active,
+.footerLink:focus,
+.footerLink:visited {
+    color: #222;
+    text-decoration: none;
+}
+.table {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+.heading {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 12px 8px;
+}
+.data {
+    font-size: 13px;
+    color: #333333;
+    text-transform: capitalize;
+    padding: 12px 8px;
+}
+.dataTime {
+    text-transform: none;
+}
+.defaultBorder {
+    border-left: 2px solid #ebebeb;
+}
+.dataContainer:hover {
+    background-color: #f6f8fb;
+}
+th {
+    background-color: #e9eff2;
+    border-bottom: 1px solid #d1d1d1;
+}
+td {
+    border-bottom: 1px solid #ebebeb;
+}
+.less {
+    color: #c1433d;
+}
+.more {
+    color: #6bae55;
+}
+.lessBorder {
+    border-left: 2px solid #c1433d;
+}
+.moreBorder {
+    border-left: 2px solid #6bae55;
+}
+@media only screen and (max-width: 768px) {
+    footer {
+      display: block;
+      text-align: center;
+    }
+    .footerNavList {
+        margin-bottom: 10px;
+    }
+    .copyright {
+        margin-bottom: 10px;
+    }
+    nav {
+        display: none;
+    }
+    header {
+        justify-content: space-between;
+    }
+    .mobileMenu {
+        display: block;
+    }
+    .disableScroll {
+        position: fixed;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+    .sidebarOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 998;
+        background: hsla(0,0%,4%,.2);
+        overflow: hidden;
+        display: none;        
+    }
+    .disableScroll .sidebarOverlay {
+        display: block;
+    }
+    .sidebar {
+        display: block;
+    }    
+}
