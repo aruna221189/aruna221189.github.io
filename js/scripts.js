@@ -1,5 +1,5 @@
 var stocks = {};
-var sock = new WebSocket("ws://stocks.mnet.website");
+var sock = new WebSocket("wss://stocks.mnet.website");
 sock.onmessage = function(event) {
     var data = JSON.parse(event.data);
     data.forEach(([name,price],index) => {
