@@ -1,21 +1,21 @@
 var stocks = {};
-var sock = new WebSocket("wss://stocks.mnet.website");
+var sock = new WebSocket("ws://stocks.mnet.website");
 sock.onmessage = function(event) {
     var data = JSON.parse(event.data);
     data.forEach(([name,price],index) => {
         var date = new Date();
         // Check if key exists in array
-        if(!(stocks.hasOwnProperty(`${name}`))) {
+        if(!(stocks.hasOwnProperty(name))) {
             //Create wrapper row
-            stocks[`${name}`] = `${price}`
+            stocks[name] = price;
             var tableRow = document.createElement("tr");
-            tableRow.id = `${name}`;
+            tableRow.id = name;
             tableRow.className = 'dataContainer'
 
             // Push name of stock to td
             // defaultBorder class adds a default border color to the td
             var ticker = document.createElement("td");
-            ticker.innerHTML = `${name}`;
+            ticker.innerHTML = name;
             ticker.id = `ticker_${name}`;
             ticker.className = 'data defaultBorder';
 
@@ -33,9 +33,9 @@ sock.onmessage = function(event) {
             
             // Append values to wrapper tableRow
             document.getElementById('liveData').appendChild(tableRow)
-            document.getElementById(`${name}`).appendChild(ticker);
-            document.getElementById(`${name}`).appendChild(data);
-            document.getElementById(`${name}`).appendChild(time);
+            document.getElementById(name).appendChild(ticker);
+            document.getElementById(name).appendChild(data);
+            document.getElementById(name).appendChild(time);
         }
         else {
             // Check if stock price has decreased
